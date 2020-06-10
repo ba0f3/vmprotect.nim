@@ -1,6 +1,12 @@
 # vmprotect.nim
 Wrapper for VMProtect SDK
 
+This module supports:
+- Windows (not tested yet)
+- MinGW
+- Linux
+- OSX (not tested yet)
+
 ## Usage
 ```nim
 import vmprotect
