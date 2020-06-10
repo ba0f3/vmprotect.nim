@@ -6,7 +6,7 @@ Wrapper for VMProtect SDK
 import vmprotect
 
 proc toBeProtected() =
-  VMProtectBeginUltra("2")
+  VMProtectBeginUltra("MarkerName")
   # your code goes here
   VMProtectEnd()
 ```
