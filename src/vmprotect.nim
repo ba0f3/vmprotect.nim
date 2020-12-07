@@ -17,7 +17,7 @@ elif defined(darwin):
 else:
   const
     platform = "Linux"
-    suffix = ".so"
+    suffix = ""
 
 when defined(darwin):
   const arch = ""
@@ -70,13 +70,8 @@ type
     nUserDataLength: uint8
     bUserData: array[255, char]
 
-when defined(mingw):
-  {.push importc, stdcall.}
-  {.passL: "-L" & PATH & "/private/lib/" & platform & " -l" & "VMProtectSDK" & arch.}
-elif defined(windows):
-  {.push importc, stdcall, dynlib: PATH & "/private/lib/" & platform & "/VMProtectSDK" & arch & suffix.}
-else:
-  {.push importc, cdecl, dynlib: PATH & "/private/lib/" & platform & "/libVMProtectSDK" & arch & suffix.}
+{.push importc, stdcall.}
+{.passL: "-L" & PATH & "/private/lib/" & platform & " -l" & "VMProtectSDK" & arch & suffix.}
 
 # protection
 proc VMProtectBegin*(MarkerName: cstring = "")

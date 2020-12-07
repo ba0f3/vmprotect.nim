@@ -7,6 +7,9 @@ This module supports:
 - Linux
 - OSX (not tested yet)
 
+Notes:
+- For Linux users, make sure you have libVMProjectXX.so in your LD_LIBRARY_PATH in development environent (its not needed when protected)
+
 ## Usage
 ```nim
 import vmprotect
