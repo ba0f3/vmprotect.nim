@@ -4,7 +4,7 @@ const PATH = currentSourcePath.splitPath.head
 when defined(mingw):
   const
     platform = "Windows/MinGW"
-    suffix = ".a"
+    suffix = ""
 elif defined(windows):
   import winlean
   const
