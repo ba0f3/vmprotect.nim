@@ -96,7 +96,7 @@ proc VMProtectFreeString*(Value: pointer): bool
 proc VMProtectSetSerialNumber*(serial: cstring)
 proc VMProtectGetSerialNumberState*(): int32
 proc VMProtectGetSerialNumberData*(data: VMProtectSerialNumberData, size: int32): bool
-proc VMProtectGetCurrentHWID*(hwid: cstring, size: int32): int32
+proc VMProtectGetCurrentHWID*(hwid: cstring, size: int32): int32 {.discardable.}
 
 # activation
 proc VMProtectActivateLicense*(code: cstring, serial: cstring, size: int32): int32
